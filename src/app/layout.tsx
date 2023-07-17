@@ -2,6 +2,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Public_Sans } from 'next/font/google';
 import LayoutAbra from '../components/LayoutAbra';
+import ThemeProviderAbra from './theme-provider';
 
 const inter = Public_Sans({ subsets: ['latin'] });
 
@@ -18,7 +19,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <LayoutAbra>{children}</LayoutAbra>
+        <ThemeProviderAbra>
+          <LayoutAbra>{children}</LayoutAbra>
+        </ThemeProviderAbra>
       </body>
     </html>
   );
